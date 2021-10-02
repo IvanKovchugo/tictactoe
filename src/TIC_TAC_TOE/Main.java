@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Main {
     private static char map[][];
-    private static final int SIZE = 3;
-    private static final int DOT_TO_WIN = 3;
+    private static final int SIZE = 5;
+    private static final int DOT_TO_WIN = 4;
     private static final char ELEMENT_EMPTY = '_';
     private static final char ELEMENT_X = 'X';
     private static final char ELEMENT_0 = '0';
@@ -41,12 +41,13 @@ public class Main {
         }
     }
 
-    public static boolean isWin(char symb) {
+    public static boolean isWin(char DOT_TO_WIN) {
         for (int i = 0; i < SIZE; i++) {
-            if ((map[i][0] == symb && map[i][1] == symb && map[i][2] == symb)
-               || (map[0][i] == symb && map[1][i] == symb && map[2][i] == symb))
+            if ((map[i][0] == DOT_TO_WIN && map[i][1] == DOT_TO_WIN && map[i][2] == DOT_TO_WIN && map[i][3] == DOT_TO_WIN)
+                    || (map[0][i] == DOT_TO_WIN && map[1][i] == DOT_TO_WIN && map[2][i] == DOT_TO_WIN && map[3][i] == DOT_TO_WIN))
                 return true;
-            if ((map[0][0] == symb && map[1][1] == symb && map[2][2] == symb)) return true;
+            if ((map[0][0] == DOT_TO_WIN && map[1][1] == DOT_TO_WIN && map[2][2] == DOT_TO_WIN && map[3][3] == DOT_TO_WIN))
+                return true;
         }
         return false;
     }
