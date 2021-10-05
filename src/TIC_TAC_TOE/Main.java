@@ -44,9 +44,19 @@ public class Main {
     public static boolean isWin(char DOT_TO_WIN) {
         for (int i = 0; i < SIZE; i++) {
             if ((map[i][0] == DOT_TO_WIN && map[i][1] == DOT_TO_WIN && map[i][2] == DOT_TO_WIN && map[i][3] == DOT_TO_WIN)
-                    || (map[0][i] == DOT_TO_WIN && map[1][i] == DOT_TO_WIN && map[2][i] == DOT_TO_WIN && map[3][i] == DOT_TO_WIN))
+               || (map[0][i] == DOT_TO_WIN && map[1][i] == DOT_TO_WIN && map[2][i] == DOT_TO_WIN && map[3][i] == DOT_TO_WIN))
                 return true;
             if ((map[0][0] == DOT_TO_WIN && map[1][1] == DOT_TO_WIN && map[2][2] == DOT_TO_WIN && map[3][3] == DOT_TO_WIN))
+                return true;
+            if ((map[0 + 1][0] == DOT_TO_WIN && map[1 + 1][1] == DOT_TO_WIN && map[2 + 1][2] == DOT_TO_WIN && map[3 + 1][3] == DOT_TO_WIN))
+                return true;
+            if ((map[3][0] == DOT_TO_WIN && map[2][1] == DOT_TO_WIN && map[1][2] == DOT_TO_WIN && map[0][3] == DOT_TO_WIN))
+                return true;
+            if ((map[1][4] == DOT_TO_WIN && map[2][3] == DOT_TO_WIN && map[3][2] == DOT_TO_WIN && map[4][1] == DOT_TO_WIN))
+                return true;
+            if ((map[4][4] == DOT_TO_WIN && map[3][3] == DOT_TO_WIN && map[2][2] == DOT_TO_WIN && map[1][1] == DOT_TO_WIN))
+                return true;
+            if ((map[4][3] == DOT_TO_WIN && map[3][2] == DOT_TO_WIN && map[2][1] == DOT_TO_WIN && map[1][0] == DOT_TO_WIN))
                 return true;
         }
         return false;
